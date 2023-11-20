@@ -1,0 +1,84 @@
+<!--
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <img src="./assets/icone-de-termometro 2.jpeg" alt="imagem não disponível">
+            <p>conversor - Danilo Miranda</p>
+        </div>
+        <input type="number">
+    </div>
+    <script src="./conversor.js"></script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital,wght@1,100&display=swap"
+      rel="stylesheet"
+    />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Temperatura</title>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+<div class="container">
+
+    <img src="./assets/icone-de-termometro 3.png" alt="imagem não disponível">
+
+    <h1>Conversor de Temperatura</h1>
+
+    <div class="input">
+        <label for="temperatura">Digite a temperatura:</label>
+        <input type="number" id="temperatura" placeholder="Digite a temperatura">
+        
+        <select id="unidade">
+          <option value="celsius">Celsius</option>
+          <option value="fahrenheit">Fahrenheit</option>
+        </select>
+        
+        <button onclick="converterTemperatura()">Converter</button>
+    </div>
+    
+    <p id="resultado"></p>
+</div>
+    
+
+<footer>
+    Preparado por <em>Danilo Miranda</em> 
+</footer>
+
+<script>
+  function converterTemperatura() {
+    // Obtenha o valor da temperatura
+    var temperatura = parseFloat(document.getElementById("temperatura").value);
+
+    // Obtenha a unidade selecionada
+    var unidade = document.getElementById("unidade").value;
+
+    // Faça a conversão para Fahrenheit ou Celsius conforme necessário
+    var resultado;
+    if (unidade === "celsius") {
+      resultado = (temperatura * 9/5) + 32;
+      document.getElementById("resultado").innerHTML = temperatura + " graus Celsius são " + resultado.toFixed(2) + " graus Fahrenheit.";
+    } else {
+      resultado = (temperatura - 32) * 5/9;
+      document.getElementById("resultado").innerHTML = temperatura + " graus Fahrenheit são " + resultado.toFixed(2) + " graus Celsius.";
+    }
+  }
+</script>
+
+</body>
+</html>
